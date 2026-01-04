@@ -14,54 +14,64 @@ import TimeListenedPer from "../../components/ImplementedCharts/TimeListenedPer"
 import { selectUser } from "../../services/redux/modules/user/selector";
 import s from "./index.module.css";
 
+import Divider from "@mui/material/Divider";
+
 export default function AllStats() {
-  const user = useSelector(selectUser);
+    const user = useSelector(selectUser);
 
-  if (!user) {
-    return null;
-  }
+    if (!user) {
+        return null;
+    }
 
-  return (
-    <div className={s.root}>
-      <Header
-        title="All stats"
-        subtitle="You can find here all kind of stats based on the time span on the
+    return (
+        <div className={s.root}>
+            <Header
+                title="All stats"
+                subtitle="You can find here all kind of stats based on the time span on the
           right"
-      />
-      <div className={s.content}>
-        <Grid container spacing={2}>
-          <Grid size={{ xs: 12, md: 12, lg: 6 }}>
-            <BestArtistsBar className={s.chart} />
-          </Grid>
-          <Grid size={{ xs: 12, md: 12, lg: 6 }}>
-            <ListeningRepartition className={s.chart} />
-          </Grid>
-          <Grid size={{ xs: 12, md: 12, lg: 6 }}>
-            <ArtistListeningRepartition className={s.chart} />
-          </Grid>
-          <Grid size={{ xs: 12, md: 12, lg: 6 }}>
-            <BestOfHour className={s.chart} />
-          </Grid>
-          <Grid size={{ xs: 12, md: 12, lg: 6 }}>
-            <SongsListenedPer className={s.chart} />
-          </Grid>
-          <Grid size={{ xs: 12, md: 12, lg: 6 }}>
-            <TimeListenedPer className={s.chart} />
-          </Grid>
-          <Grid size={{ xs: 12, md: 12, lg: 6 }}>
-            <DifferentArtistListenedPer className={s.chart} />
-          </Grid>
-          <Grid size={{ xs: 12, md: 12, lg: 6 }}>
-            <AverageAlbumReleaseDate className={s.chart} />
-          </Grid>
-          <Grid size={{ xs: 12, md: 12, lg: 6 }}>
-            <AverageNumberArtistPer className={s.chart} />
-          </Grid>
-          <Grid size={{ xs: 12, md: 12, lg: 6 }}>
-            <AverageSongPopularityPer className={s.chart} />
-          </Grid>
-        </Grid>
-      </div>
-    </div>
-  );
+            />
+            <div className={s.content}>
+                <Grid container spacing={2}>
+                    <Grid size={{ xs: 12, md: 12, lg: 6 }}>
+                        <BestArtistsBar className={s.chart} />
+                    </Grid>
+                    <Grid size={{ xs: 12, md: 12, lg: 6 }}>
+                        <ListeningRepartition className={s.chart} />
+                    </Grid>
+                    <Grid size={{ xs: 12, md: 12, lg: 6 }}>
+                        <ArtistListeningRepartition className={s.chart} />
+                    </Grid>
+                    <Grid size={{ xs: 12, md: 12, lg: 6 }}>
+                        <BestOfHour className={s.chart} />
+                    </Grid>
+                    <Grid size={{ xs: 12, md: 12, lg: 6 }}>
+                        <SongsListenedPer className={s.chart} />
+                    </Grid>
+                    <Grid size={{ xs: 12, md: 12, lg: 6 }}>
+                        <TimeListenedPer className={s.chart} />
+                    </Grid>
+                    <Grid size={{ xs: 12, md: 12, lg: 6 }}>
+                        <DifferentArtistListenedPer className={s.chart} />
+                    </Grid>
+                    <Grid size={{ xs: 12, md: 12, lg: 6 }}>
+                        <AverageAlbumReleaseDate className={s.chart} />
+                    </Grid>
+                    <Grid size={{ xs: 12, md: 12, lg: 6 }}>
+                        <AverageNumberArtistPer className={s.chart} />
+                    </Grid>
+                    <Grid size={{ xs: 12, md: 12, lg: 6 }}>
+                        <AverageSongPopularityPer className={s.chart} />
+                    </Grid>
+                </Grid>
+                <h1>More stats</h1>
+                <Grid container spacing={2}>
+                    <Grid size={{ xs: 12, md: 12, lg: 6 }}>
+                    </Grid>
+                    <Grid size={{ xs: 12, md: 12, lg: 6 }}>
+                        <BestArtistsBar className={s.chart} />
+                    </Grid>
+                </Grid>
+            </div>
+        </div>
+    );
 }
