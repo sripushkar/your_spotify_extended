@@ -13,47 +13,47 @@ import { selectUser } from "../../services/redux/modules/user/selector";
 import s from "./index.module.css";
 
 export default function Home() {
-  const user = useSelector(selectUser);
+    const user = useSelector(selectUser);
 
-  if (!user) {
-    return null;
-  }
+    if (!user) {
+        return null;
+    }
 
-  return (
-    <div>
-      <Header
-        title={`Welcome, ${user.username} 🎉`}
-        tinyTitle="Welcome"
-        subtitle="Here is what happened for the period you chose on the right"
-      />
-      <div className={s.content}>
-        <Grid container spacing={2} alignItems="stretch">
-          <Grid size={{ xs: 12, md: 12, lg: 4 }}>
-            <SongsListened />
-          </Grid>
-          <Grid size={{ xs: 12, md: 6, lg: 4 }} >
-            <TimeListened />
-          </Grid>
-          <Grid size={{ xs: 12, md: 6, lg: 4 }} >
-            <ArtistsListened />
-          </Grid>
-          <Grid size={{ xs: 12, md: 6, lg: 8 }} >
-            <TimeListenedPer className={s.timelisten} />
-          </Grid>
-          <Grid size={{ xs: 12, md: 6, lg: 4 }} >
-            <BestArtist />
-          </Grid>
-          <Grid size={{ xs: 12, md: 6, lg: 8 }} >
-            <ListeningRepartition className={s.timelisten} />
-          </Grid>
-          <Grid size={{ xs: 12, md: 6, lg: 4 }} >
-            <BestSong />
-          </Grid>
-          <Grid size={{ xs: 12, md: 12, lg: 12 }} >
-            <History />
-          </Grid>
-        </Grid>
-      </div>
-    </div>
-  );
+    return (
+        <div>
+            <Header
+                title={`le spotify ext`}
+                tinyTitle="Welcome"
+                subtitle="Here is what happened for the period you chose on the right"
+            />
+            <div className={s.content}>
+                <Grid container spacing={2} alignItems="stretch">
+                    <Grid size={{ xs: 12, md: 12, lg: 4 }}>
+                        <SongsListened />
+                    </Grid>
+                    <Grid size={{ xs: 12, md: 6, lg: 4 }}>
+                        <TimeListened />
+                    </Grid>
+                    <Grid size={{ xs: 12, md: 6, lg: 4 }}>
+                        <ArtistsListened />
+                    </Grid>
+                    <Grid size={{ xs: 12, md: 6, lg: 8 }}>
+                        <TimeListenedPer className={s.timelisten} />
+                    </Grid>
+                    <Grid size={{ xs: 12, md: 6, lg: 4 }}>
+                        <BestArtist />
+                    </Grid>
+                    <Grid size={{ xs: 12, md: 6, lg: 8 }}>
+                        <ListeningRepartition className={s.timelisten} />
+                    </Grid>
+                    <Grid size={{ xs: 12, md: 6, lg: 4 }}>
+                        <BestSong />
+                    </Grid>
+                    <Grid size={{ xs: 12, md: 12, lg: 12 }}>
+                        <History />
+                    </Grid>
+                </Grid>
+            </div>
+        </div>
+    );
 }
